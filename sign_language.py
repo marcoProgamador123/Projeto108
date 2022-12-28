@@ -40,6 +40,10 @@ while True:
                 if lm_list[thumb_tip].y < lm_list[thumb_tip-1].y < lm_list[thumb_tip - 2].y:
                     print("curti")
                     cv2.putText(img,"CURTI", (20,30),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),3)
+                    
+                if lm_list[thumb_tip].y > lm_list[thumb_tip-1].y > lm_list[thumb_tip - 2].y:
+                    print("NÃO CURTI")
+                    cv2.putText(img,"NÃO CURTI", (20,30),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),3)    
             
             mp_draw.draw_landmarks(img, hand_landmark,
             mp_hands.HAND_CONNECTIONS, mp_draw.DrawingSpec((0,0,255),2,2),
